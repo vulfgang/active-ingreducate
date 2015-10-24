@@ -1,10 +1,12 @@
 angular.module('app.services', [])
 
-.factory('BlankFactory', [function(){
-
+.service('OCRService', ['CaptureService', function(image){
+  var string = OCRAD(image);
+  this.getText = function() {
+    return string;
+  };
 }])
 
-.service('BlankService', [function(){
-
+.service('ParserService', ['OCRService', function(QCRService){
+  //
 }]);
-
