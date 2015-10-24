@@ -30,12 +30,11 @@ angular.module('app.services', [])
 }])
 
 .service('ParserService', [function() {
-
-  // Assume that the text is accurate.
-  console.log('Begin parsing text:\n' + text + '\n*~*~*~*~*~*~*~*');
-
   this.getParsed = function(text)
   {
+    // Assume that the text is accurate.
+    console.log('Begin parsing text:\n' + text + '\n*~*~*~*~*~*~*~*');
+    
     var result;
 
     // Food ingredients list.
