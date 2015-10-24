@@ -1,23 +1,24 @@
 angular.module('app.controllers', [])
    
-.controller('captureCtrl', ['$scope', 'Camera', function($scope, Camera) {
+.controller('captureCtrl', ['$scope', 'Camera', 'ParserService', function($scope, Camera, ParserService) {
   $scope.getPhoto = function() {
+
     $scope.lastPhoto = '/img/sample.jpg';
-    $scope.ocrString = 'doge';
+    $scope.ocrString = 'de';
 
     var canvas = document.createElement('canvas');
     var context = canvas.getContext('2d');
     var img = document.createElement('IMG');
     img.src = '/img/sample.jpg';
     img.onload = function() {
-      document.write('hi');
-      context.drawImage(img, 0, 0 );
-      var myData = context.getImageData(0, 0, img.width, img.height);
-      $scope.ocrString = OCRAD(myData);
-      if ($scope.ocrString.length !== 0) {
-        $scope.ocrString = 'doge';
-      }
+      context.drawImage(img, 0, 0, img.width, img.height);
+      context.getImageData(0, 0, img.width, img.height);
+      var text = OCRAD(canvas);
+      var parsed = ParserService.getParsed(text);
+      document.getElementById("ocrString").innerHTML = text;
+      document.getElementById("parsed").innerHTML = parsed;
     };
+  };
 
     // Camera.getPicture().then(function(imageURI) {
     //   console.log(imageURI);
@@ -32,7 +33,6 @@ angular.module('app.controllers', [])
     //   saveToPhotoAlbum: false,
     //   correctOrientation: true
     // });
-  };
 }])
 
 .controller('historyCtrl', function($scope) {
