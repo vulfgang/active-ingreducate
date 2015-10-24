@@ -1,7 +1,7 @@
 {
-  "name": "active-ingreducate",
+  "name": "app1",
   "version": "1.0.0",
-  "description": "active-ingreducate: An Ionic project",
+  "description": "app1: An Ionic project",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",
