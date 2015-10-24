@@ -1,8 +1,4 @@
 angular.module('app.controllers', [])
-  
-.controller('indexCtrl', function($scope) {
-
-})
    
 .controller('captureCtrl', function($scope) {
 
@@ -10,5 +6,5 @@ angular.module('app.controllers', [])
    
 .controller('historyCtrl', function($scope) {
 
-})
+});
  

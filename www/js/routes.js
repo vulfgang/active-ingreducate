@@ -7,10 +7,9 @@ angular.module('app.routes', [])
   // Each state's controller can be found in controllers.js
   $stateProvider
       
-  .state('index', {
+  .state('home', {
     url: '/',
-    templateUrl: 'templates/index.html',
-    controller: 'indexCtrl'
+    templateUrl: 'templates/home.html'
   })
 
   .state('capture', {
