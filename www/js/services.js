@@ -1,17 +1,5 @@
 angular.module('app.services', [])
 
-.service('OCRService', ['CaptureService', function(image){
-  return {
-    getText: function() {
-      return OCRAD(image);
-    }
-  };
-  // var string = OCRAD(image);
-  // this.getText = function() {
-  //   return string;
-  // };
-}])
-
 .factory('Camera', ['$q', function($q) {
   return {
     getPicture: function(options) {
